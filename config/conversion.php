@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'source-disk' => 'local',
-    'source-path' => 'source/Loops',
-    'destination-disk' => 'local',
-    'destination-path' => 'destination/Loops',
+    'source-disk' => 'documents',
+    'source-path' => 'LoopData/Source/Loops',
+    'destination-disk' => 'documents',
+    'destination-path' => 'LoopData/Converted/Loops',
     'looper-x-loop-template' => 'looper-x-template.loop',
     'fields-to-convert' =>
         [
