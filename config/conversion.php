@@ -11,6 +11,13 @@ return [
             "name",
             "uuid",
             "engine" => [
+                "click",
+                "fadeOutRate",
+                "feedback1",
+                "feedback2",
+                "feedback3",
+                "feedback4",
+                "ltCtrls",
                 "masterTrackIndex",
                 "oneShot1",
                 "oneShot2",

@@ -53,6 +53,7 @@ class ConvertLoopAction extends Action
     {
         $sourceJson = $this->getLoopJson($loopName);
         $loop = $this->getTemplateJson();
+        $ltCtrlsTemplate = $loop['engine']['ltCtrls'];
 
         $loop['name'] = $loopName;
         $loop['uuid'] = Str::uuid()->toString();
@@ -64,6 +65,11 @@ class ConvertLoopAction extends Action
 
                     if ($subValue === 'trackMode') {
                         $loop[$key][$subValue] = config('conversion.track-mode-map')[$sourceJson[$key][$subValue]];
+                    }
+                    if ($subValue === 'ltCtrls') {
+                        if (is_array($loop[$key][$subValue])) {
+                            $loop[$key][$subValue]['_version'] = $ltCtrlsTemplate['_version'];
+                        }
                     }
                 }
             } else {
